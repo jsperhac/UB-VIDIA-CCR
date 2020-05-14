@@ -3,7 +3,7 @@
 
 
 
-# General instructions
+# 1. General instructions
 
 To find out what's available on UB VIDIA via the "%use" magic, just type "use" in the command line (in the Workspace)
 
@@ -19,20 +19,47 @@ conda info --env
 
 
 
-# Software availability
+# 2. Software availability & status
 
-| Position |                VIDIA                |                Cluster              |
-| -------- | ----------------------------------- | ----------------------------------- |
-|    1     |                                     |  QMflows                            |
+|   Software                     |         VIDIA                |         Cluster              |
+| ----------                     | ---------------------------- | ---------------------------- |
+|  QMflows-namd                  |           Yes                |         Yes                  |
 
 
 
-1. QMflows
-    cluster:
-        module load vidia/quantum-chemistry-py37-Fall2019 
-    VIDIA:
-        use anaconda-6
-        source activate qmflows
+
+# 3. Specific usage notes
+
+1.<details>
+  <summary>QMflows</summary>
+  
+  Description:
+
+  VIDIA:
+
+    use anaconda-6
+    source activate qmflows
+
+  Cluster:
+
+    module load vidia/quantum-chemistry-py37-Fall2019  
+  </details>
+
+2.<details>
+  <summary>QMflows</summary>
+  
+  Description:
+
+  VIDIA:
+
+    use anaconda-6
+    source activate qmflows
+
+  Cluster:
+
+    module load vidia/quantum-chemistry-py37-Fall2019  
+  </details>
+
 
 
 2. SHARC
