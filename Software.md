@@ -23,204 +23,235 @@ conda info --env
 
 |   Software                     |         VIDIA                |         Cluster              |
 | ----------                     | ---------------------------- | ---------------------------- |
-|  Libra                         | 4.4.0, 4.8.1                 |  4.4.0, 4.8.1                  |
+|  Libra                         | 4.8.1, 4.4.0                 |  4.8.1, 4.4.0                  |
+|  Psi4                          |  Yes (version?)              |  Yes (version?)                  |
+|  PySCF                         |  Yes (version?)              |  Yes (version?)                  |
 |  py3Dmol                       |  Yes (version?)              |  Yes (version?)                  |
 |  QMflows-namd                  |           Yes (version?)         |         Yes                  |
+|  PyQuante2                     |  Yes (version?)              |  Yes (version?)                  |
 |  SHARC                         |           2.1.1                |         No                   |
 |  DFTB+                         |   pre-18.2, pre-17.1         |  19.1-arpack, 19.1-dftd3, 19.1     |
+|  CP2K                          |  Yes (version?)              |  7.1, 6.1     |
+|  ErgoSCF                       |        No                    |  3.8, 3.8-modified    |
+|  QuantumEspresso               | No   |  6.5, 6.4.1, 6.2.1, 6.2.1-epw, 6.1, 5.2.1, 5.2.1-static, 5.0.2    |
+|  eQE                           | No   |  0.2.0    |
+|  HORTON                        | No   |  2.1.1    |
+|  COLUMBUS                      | No   | 7.0_2017-12-07 |
+|  Newton-X                      | Yes (version?)   |  No |
+|  Hefei-NAMD                    | No   |  Yes (version?) |
 
 
+# 3. To be added:
 
-# 3. Specific usage notes
+- OpenMolcas
+- NEXMD
+
+
+# 4. Specific usage notes
 
 
 * <details>
   <summary>Libra</summary>  
   Description:
   VIDIA:
-
-    use libra-4.4.0
-    use libra-4.8.1
-    use libra-pyscf
-
+    Any of the lines
+    `use libra-4.4.0`
+    `use libra-4.8.1`
+    `use libra-pyscf`
   Cluster:
-
-    module load vidia/quantum-chemistry-py37-Fall2019  
-
+    `module load vidia/quantum-chemistry-py37-Fall2019`
   Notes:
   </details>
 
+* <details>
+  <summary>Psi4</summary>  
+  Description:
+  VIDIA:
+    Any of the lines
+    `use libra-4.4.0`
+    `use libra-4.8.1`
+    `use libra-pyscf`
+  Cluster:
+    `module load vidia/quantum-chemistry-py37-Fall2019`
+  Notes:
+  </details>
+
+* <details>
+  <summary>PySCF</summary>  
+  Description:
+  VIDIA:
+    Any of the lines
+    `use libra-pyscf`
+  Cluster:
+    `module load vidia/quantum-chemistry-py37-Fall2019`
+  Notes:
+  </details>
 
 * <details>
   <summary>py3Dmol</summary>  
   Description:
   VIDIA:
-
-    use libra-4.4.0
-    use libra-4.8.1
-    use libra-pyscf
-
+    Any of the lines
+    `use libra-4.4.0`
+    `use libra-4.8.1`
+    `use libra-pyscf`
   Cluster:
-
-    module load vidia/quantum-chemistry-py37-Fall2019  
-
+    `module load vidia/quantum-chemistry-py37-Fall2019`
   Notes:
   </details>
-
-
 
 * <details>
   <summary>QMflows</summary>  
   Description:
   VIDIA:
-
-    use anaconda-6
-    source activate qmflows
-
+    All of the lines
+    `use anaconda-6`
+    `source activate qmflows`
   Cluster:
-
-    module load vidia/quantum-chemistry-py37-Fall2019  
-
+    `module load vidia/quantum-chemistry-py37-Fall2019`
   Notes:
+  </details>
+
+* <details>
+  <summary>PyQuante2</summary>  
+  Description: 
+  VIDIA:
+    All of the lines
+    `use anaconda-6`
+    `source activate pyquante2`
+  Cluster:
+    Any of the lines
+    `module load vidia/quantum-chemistry-py37-Fall2019`
+  Notes: requires Python 2    
   </details>
 
 * <details>
   <summary>SHARC</summary>  
   Description:
-
   VIDIA:
-
-    use sharc-2.1.1
-
+    Any of the lines
+    `use sharc-2.1.1`
   Cluster:
     N/A
-
   Notes: doesn't include PySHARC
   </details>
 
 * <details>
   <summary>DFTB+</summary>  
   Description:
-
   VIDIA:
+    Any of the lines
+    `use dftbplus-pre-18.2`
+    `use dftbplus-pre-17.1`
 
-    use dftbplus-pre-18.2 
+  Cluster:  
+    Any of the lines
+    `module load dftbplus/19.1-arpack` - a version for TD-DFTB+ calculations, but not parallel
+    `module load dftbplus/19.1-dftd3` - a version that includes Grimme's dispersion
+    `module load dftbplus/19.1` - a generic version (parallel)
 
-  or
-
-    use dftbplus-pre-17.1 
-
-  Cluster:
-  A version for TD-DFTB+ calculations, but not parallel
-
-    module load dftbplus/19.1-arpack
-
-  A version that includes Grimme's dispersion:
-
-    module load dftbplus/19.1-dftd3
-
-  A generic version (parallel):
-
-    module load dftbplus/19.1 
-
-  Notes: 
-  This one is available, but doesn't work due to library conflicts
-
-    use dftbplus-18.2 
+  Notes:   
+    `use dftbplus-18.2` - this one is available, but doesn't work due to library conflicts
   </details>
 
+* <details>
+  <summary>CP2K</summary>  
+  Description:
+  VIDIA:
+    All of the lines
+    `use anaconda-6`
+    `source activate cp2k-test` this is a testing version
 
-4. CP2K
-    cluster:
-    VIDIA:
-        use anaconda-6
-        source activate cp2k-test (just testing)
+  Cluster:
+    Any of the lines
+    `cp2k/6.1-precompiled`
+    `cp2k/7.1-precompiled`
+  Notes: 
+  </details>
 
+* <details>
+  <summary>ErgoSCF</summary>  
+  Description: 
+  VIDIA:
+    N/A
+  Cluster:
+    Any of the lines
+    `module load ergoscf/3.8` - this is the default version
+    `module load ergoscf/3.8-vidia` - this is the version with the corrected code needed for NAC calculations!
+  Notes: 
+  </details>
 
-5. Quantum Espresso
-    cluster:
-        module load espresso/5.0.2
-        module load espresso/5.1.1-static
-        module load espresso/5.2.1
-        module load espresso/6.1
-        module load espresso/6.2.1-epw
-        module load espresso/6.2.1
-        module load espresso/6.4.1
-        module load espresso/6.5
-    VIDIA: 
-        NA 
+* <details>
+  <summary>Quantum Espresso</summary>  
+  Description:
+  VIDIA:
+    N/A
+  Cluster:
+    Any of the lines
+    `module load espresso/5.0.2`
+    `module load espresso/5.1.1-static`
+    `module load espresso/5.2.1`
+    `module load espresso/6.1`
+    `module load espresso/6.2.1-epw`
+    `module load espresso/6.2.1`
+    `module load espresso/6.4.1`
+    `module load espresso/6.5`
+  Notes: 
+  </details>
 
-6. eQE
-    cluster:  
-        module load eqe/0.2.0
-    VIDIA: 
-        N/A
+* <details>
+  <summary>eQE</summary>  
+  Description: Embedded Quantum Espresso
+  VIDIA:
+    N/A
+  Cluster:
+    Any of the lines
+    `module load eqe/0.2.0`
+  Notes: 
+  </details>
 
-7. NEXMD
-    cluster:
-        N/A
-    VIDIA:
-        N/A
+* <details>
+  <summary>HORTON</summary>  
+  Description: 
+  VIDIA:
+    N/A
+  Cluster:
+    Any of the lines
+    `module load horton/2.1.1`
+  Notes: 
+  </details>
 
-8. Psi4
-    cluster:
-        module load vidia/quantum-chemistry-py37-Fall2019
-    VIDIA:
-        use libra-4.4.0
-        use libra-4.8.1
-        use libra-pyscf
+* <details>
+  <summary>COLUMBUS</summary>  
+  Description: 
+  VIDIA:
+    N/A
+  Cluster:
+    Any of the lines
+    `module columbus/7.0_2017-12-07-bin`
+  Notes: 
+  </details>
 
+* <details>
+  <summary>Newton-X</summary>  
+  Description: 
+  VIDIA:
+    Any of the lines
+    `use newton-x`
+  Cluster:
+    N/A
+  Notes: 
+  </details>
 
-9. PyQuante2
-    cluster:
-        module load vidia/quantum-chemistry-py37-Fall2019
-    VIDIA:
-        use anaconda-6
-        source activate pyquante2  (requires Python 2)
-
-
-10. HORTON
-    cluster:
-        module load horton/2.1.1
-    VIDIA:
-        NA
-
-11. PySCF
-    cluster:
-        module load vidia/quantum-chemistry-py37-Fall2019
-    VIDIA:
-        use libra-pyscf
-        
-
-12. Newton-X
-    cluster: 
-        ??
-    VIDIA: 
-        %use newton-x
-
-13. Open Molcas
-    cluster:
-        N/A
-    VIDIA:
-        N/A
-
-14. ErgoSCF
-    cluster: 
-        module load ergoscf/3.8
-        module load ergoscf/3.8-vidia  (with the change)
-    VIDIA: 
-        ??
-
-15. COLUMBUS
-    cluster:
-        ?? 
-    VIDIA:
-        N/A
-
-16. Hefei-NAMD
-    cluster:
-        module load hefei-namd
-    VIDIA:
-        N/A
+* <details>
+  <summary>Hefei-NAMD</summary>  
+  Description: 
+  VIDIA:
+    N/A
+  Cluster:
+    Any of the lines
+    `module load hefei-namd`
+  Notes: 
+  </details>
 
 
