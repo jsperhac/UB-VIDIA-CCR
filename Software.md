@@ -23,18 +23,55 @@ conda info --env
 
 |   Software                     |         VIDIA                |         Cluster              |
 | ----------                     | ---------------------------- | ---------------------------- |
-|  QMflows-namd                  |           Yes                |         Yes                  |
-
+|  Libra                         | 4.4.0, 4.8.1                 |  4.4.0, 4.8.1                  |
+|  py3Dmol                       |  Yes (version?)              |  Yes (version?)                  |
+|  QMflows-namd                  |           Yes (version?)         |         Yes                  |
+|  SHARC                         |           2.1.1                |         No                   |
+|  DFTB+                         |   pre-18.2, pre-17.1         |  19.1-arpack, 19.1-dftd3, 19.1     |
 
 
 
 # 3. Specific usage notes
 
-1.<details>
-  <summary>QMflows</summary>
-  
-  Description:
 
+* <details>
+  <summary>Libra</summary>  
+  Description:
+  VIDIA:
+
+    use libra-4.4.0
+    use libra-4.8.1
+    use libra-pyscf
+
+  Cluster:
+
+    module load vidia/quantum-chemistry-py37-Fall2019  
+
+  Notes:
+  </details>
+
+
+* <details>
+  <summary>py3Dmol</summary>  
+  Description:
+  VIDIA:
+
+    use libra-4.4.0
+    use libra-4.8.1
+    use libra-pyscf
+
+  Cluster:
+
+    module load vidia/quantum-chemistry-py37-Fall2019  
+
+  Notes:
+  </details>
+
+
+
+* <details>
+  <summary>QMflows</summary>  
+  Description:
   VIDIA:
 
     use anaconda-6
@@ -43,40 +80,55 @@ conda info --env
   Cluster:
 
     module load vidia/quantum-chemistry-py37-Fall2019  
+
+  Notes:
   </details>
 
-2.<details>
-  <summary>QMflows</summary>
-  
+* <details>
+  <summary>SHARC</summary>  
   Description:
 
   VIDIA:
 
-    use anaconda-6
-    source activate qmflows
+    use sharc-2.1.1
 
   Cluster:
+    N/A
 
-    module load vidia/quantum-chemistry-py37-Fall2019  
+  Notes: doesn't include PySHARC
   </details>
 
+* <details>
+  <summary>DFTB+</summary>  
+  Description:
 
+  VIDIA:
 
-2. SHARC
-    cluster: 
-        N/A
-    VIDIA:
-        use sharc-2.1.1  (Python 3)
+    use dftbplus-pre-18.2 
 
-3. DFTB+
-    cluster:
-        module load dftbplus/19.1-arpack
-        module load dftbplus/19.1-dftd3
-        module load dftbplus/19.1 
-    VIDIA:
-        use dftbplus-18.2 (doesn't work)
-        use dftbplus-pre-17.1 (works, but less efficient)
-        use dftbplus-pre-18.2  (works)
+  or
+
+    use dftbplus-pre-17.1 
+
+  Cluster:
+  A version for TD-DFTB+ calculations, but not parallel
+
+    module load dftbplus/19.1-arpack
+
+  A version that includes Grimme's dispersion:
+
+    module load dftbplus/19.1-dftd3
+
+  A generic version (parallel):
+
+    module load dftbplus/19.1 
+
+  Notes: 
+  This one is available, but doesn't work due to library conflicts
+
+    use dftbplus-18.2 
+  </details>
+
 
 4. CP2K
     cluster:
@@ -170,21 +222,5 @@ conda info --env
         module load hefei-namd
     VIDIA:
         N/A
-
-17. Libra
-    cluster:
-        module load vidia/quantum-chemistry-py37-Fall2019
-    VIDIA:
-        use libra-4.4.0
-        use libra-4.8.1
-        use libra-pyscf
-
-18. py3dmol
-    cluster:
-        module load vidia/quantum-chemistry-py37-Fall2019
-    VIDIA:
-        use libra-4.4.0
-        use libra-4.8.1
-        use libra-pyscf
 
 
