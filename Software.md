@@ -1,4 +1,7 @@
-[To the master page](README.md)
+| [HOME](README.md) |  [Software](Software.md)   |    [Videos](Videos.md)              |
+| -------- | ----------------------------------- | ----------------------------------- |
+
+
 
 # General instructions
 
