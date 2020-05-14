@@ -53,14 +53,20 @@ conda info --env
 * <details>
   <summary>Libra</summary>  
   Description:
+
   VIDIA:
+
     Any of the lines
     `use libra-4.4.0`
     `use libra-4.8.1`
     `use libra-pyscf`
+
   Cluster:
+
     `module load vidia/quantum-chemistry-py37-Fall2019`
+
   Notes:
+
   </details>
 
 * <details>
