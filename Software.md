@@ -5,40 +5,69 @@
 
 # 1. General instructions
 
-To find out what's available on UB VIDIA via the "%use" magic, just type "use" in the command line (in the Workspace)
+## `use` in the Workspace
 
+To find out what's available on UB VIDIA via the "%use" magic, start a VIDIA Workspace, then type
+"use" on the command line. You'll see a list of the options. "Use"-ing one sets paths and the needed
+environment variables.
 
-Some of the packages are installed as the environments in the anaconda-6.
-To find out what's avaialble, do this:
+Tip: if you see an error when you enter "use", try this first:
 
-use anaconda-6
-source activate base
-conda info --env
+`source /etc/environ.sh`
 
+`use`
 
+## conda envs
 
+Some packages are installed as conda envs under anaconda-6. To see a list of available conda envs, issue these commands on the Workspace command line:
+
+`use anaconda-6`
+
+`conda activate`
+
+`conda info --env`
+
+## In Python
+
+To use an environment from Python, 
+
+1. start a Jupyter Notebook or Python session 
+
+1. import the use package from hublib:
+
+    `import hublib.use`
+
+1. then call the "%use" magic to set your paths and your environment:
+
+    `%use anaconda-6`
 
 
 # 2. Software availability & status
 
-|   Software                     |         VIDIA                |         Cluster              |
+We are now reinstalling all VIDIA packages under the new debian 8 container environment. Current status:
+
+|   Software                     |         VIDIA (version/env)               |         Cluster              |
 | ----------                     | ---------------------------- | ---------------------------- |
-|  Libra                         | 4.8.1, 4.4.0                 |  4.8.1, 4.4.0                  |
-|  Psi4                          |  Yes (version?)              |  Yes (version?)                  |
-|  PySCF                         |  Yes (version?)              |  Yes (version?)                  |
-|  py3Dmol                       |  Yes (version?)              |  Yes (version?)                  |
-|  QMflows-namd                  |           Yes (version?)         |         Yes                  |
-|  PyQuante2                     |  Yes (version?)              |  Yes (version?)                  |
-|  SHARC                         |           2.1.1                |         No                   |
-|  DFTB+                         |   pre-18.2, pre-17.1         |  19.1-arpack, 19.1-dftd3, 19.1     |
-|  CP2K                          |  Yes (version?)              |  7.1, 6.1     |
+|  Libra                         | 4.8.1/libra-4.8.1                 |  4.8.1, 4.4.0                  |
+|  Psi4                          |                |  Yes (version?)                  |
+|  PySCF                         |  1.7.3/pyscf              |  Yes (version?)                  |
+|  py3Dmol                       |  0.8.0/libra-4.8.1              |  Yes (version?)                  |
+|  pyglet                       |  1.5.7/pyscf              |                    |
+|  Nano-QMflows                  |           0.10.1/qmflows         |         Yes                  |
+|  QMflows                  |           0.10.1/qmflows         |         Yes                  |
+|  PyQuante2                     |                |  Yes (version?)                  |
+|  SHARC                         |           2.1.1/pysharc (testing in progress)                |         No                   |
+|  DFTB+                         |   19.1         |  19.1-arpack, 19.1-dftd3, 19.1     |
+|  CP2K                          |                |  7.1, 6.1     |
 |  ErgoSCF                       |        No                    |  3.8, 3.8-modified    |
-|  QuantumEspresso               | No   |  6.5, 6.4.1, 6.2.1, 6.2.1-epw, 6.1, 5.2.1, 5.2.1-static, 5.0.2    |
+|  QuantumEspresso               | 6.5 |  6.5, 6.4.1, 6.2.1, 6.2.1-epw, 6.1, 5.2.1, 5.2.1-static, 5.0.2    |
 |  eQE                           | No   |  0.2.0    |
 |  HORTON                        | No   |  2.1.1    |
 |  COLUMBUS                      | No   | 7.0_2017-12-07 |
-|  Newton-X                      | Yes (version?)   |  No |
+|  Newton-X                      | 2.2-B08 (testing in progress)  |  No |
 |  Hefei-NAMD                    | No   |  Yes (version?) |
+|  Auto-FOX                    | 0.7.4/qmflows   |  Yes (version?) |
+|  CAT                    | 0.9.6/qmflows   |  Yes (version?) |
 
 
 # 3. To be added:
@@ -57,8 +86,6 @@ conda info --env
   VIDIA:
 
     Any of the lines
-
-    `use libra-4.4.0`
 
     `use libra-4.8.1`
 
@@ -79,8 +106,6 @@ conda info --env
   VIDIA:
 
     Any of the lines
-
-    `use libra-4.4.0`
 
     `use libra-4.8.1`
 
@@ -119,8 +144,6 @@ conda info --env
   VIDIA:
 
     Any of the lines
-
-    `use libra-4.4.0`
 
     `use libra-4.8.1`
 
