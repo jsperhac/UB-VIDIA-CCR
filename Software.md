@@ -5,17 +5,38 @@
 
 # 1. General instructions
 
+## Access to the command line
+
+There are three ways to access your own VIDIA container on the command line:
+
+- Run the Workspace tool
+
+- Run the Jupyter Notebooks tool, and open a new noVNC Desktop
+
+- Run the Jupyter Notebooks tool, and run a Terminal 
+
+For the Jupyter Notebooks options, access is provided in the "New" drop-down control.
+
 ## `use` in the Workspace
 
 To find out what's available on UB VIDIA via the "%use" magic, start a VIDIA Workspace, then type
 "use" on the command line. You'll see a list of the options. "Use"-ing one sets paths and the needed
-environment variables.
+environment variables to run a given piece of software. Most are specified with the version, such
+as `ergoscf-3.8`.
 
 Tip: if you see an error when you enter "use", try this first:
 
 `source /etc/environ.sh`
 
 `use`
+
+### What does `use` do?
+
+To see what really goes on when you invoke use, you can look at the settings created when you run
+it. You can list and cat them in the directory: `/apps/share64/debian8/environ.d/`
+
+So when you `cat` the ergoscf-3.8 use script you see that it sets the environment variable `$ERGO`
+enabling you to call the executables of ergoSCF.
 
 ## conda envs
 
@@ -58,8 +79,8 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 |  PyQuante2                     |                |  Yes (version?)                  |
 |  SHARC                         |           2.1.1/pysharc (testing in progress)                |         No                   |
 |  DFTB+                         |   19.1         |  19.1-arpack, 19.1-dftd3, 19.1     |
-|  CP2K                          |                |  7.1, 6.1     |
-|  ErgoSCF                       |        No                    |  3.8, 3.8-modified    |
+|  CP2K                          |        7.1        |  7.1, 6.1     |
+|  ErgoSCF                       |        3.8                    |  3.8, 3.8-modified    |
 |  QuantumEspresso               | 6.5 |  6.5, 6.4.1, 6.2.1, 6.2.1-epw, 6.1, 5.2.1, 5.2.1-static, 5.0.2    |
 |  eQE                           | No   |  0.2.0    |
 |  HORTON                        | No   |  2.1.1    |
@@ -85,11 +106,7 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
   VIDIA:
 
-    Any of the lines
-
     `use libra-4.8.1`
-
-    `use libra-pyscf`
 
   Cluster:
 
@@ -105,11 +122,6 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
   VIDIA:
 
-    Any of the lines
-
-    `use libra-4.8.1`
-
-    `use libra-pyscf`
 
   Cluster:
 
@@ -127,7 +139,7 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
     Any of the lines
 
-    `use libra-pyscf`
+    `use pyscf`
 
   Cluster:
 
@@ -146,8 +158,6 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
     Any of the lines
 
     `use libra-4.8.1`
-
-    `use libra-pyscf`
 
   Cluster:
 
@@ -183,11 +193,6 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
   VIDIA:
 
-    All of the lines
-
-    `use anaconda-6`
-
-    `source activate pyquante2`
 
   Cluster:
 
@@ -224,6 +229,8 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
   VIDIA:
 
     Any of the lines
+
+    `use dftbplus-19.1`
 
     `use dftbplus-pre-18.2`
 
