@@ -44,13 +44,11 @@ Run "man use" from the command line to see the man pages for this command.
 
 ## conda envs
 
-Some packages are installed as conda envs under anaconda-6. To see a list of available conda envs, issue these commands on the Workspace command line:
-
-`use anaconda-6`
+Some packages are installed as conda envs. To see a list of available conda envs, issue these commands on the Workspace command line:
 
 `conda activate`
 
-`conda info --env`
+`conda info --envs`
 
 ## In Python
 
@@ -64,7 +62,7 @@ To use an environment from Python,
 
 1. then call the "%use" magic to set your paths and your environment:
 
-    `%use anaconda-6`
+    `%use libra-4.8.1`
 
 
 # 2. Software availability & status
@@ -80,7 +78,7 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 |  pyglet                       |  1.5.7/pyscf              |                    |
 |  Nano-QMflows                  |           0.10.1/qmflows         |         Yes                  |
 |  QMflows                  |           0.10.1/qmflows         |         Yes                  |
-|  PyQuante2                     |                |  Yes (version?)                  |
+|  PyQuante2                     | 2.0               |  Yes (version?)                  |
 |  SHARC                         |           2.1.1/pysharc (testing in progress)                |         No                   |
 |  DFTB+                         |   19.1         |  19.1-arpack, 19.1-dftd3, 19.1     |
 |  CP2K                          |        7.1        |  7.1, 6.1     |
@@ -111,6 +109,8 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
   VIDIA:
 
     `use libra-4.8.1`
+
+    `conda activate libra-4.8.1`
 
   Cluster:
 
@@ -165,6 +165,8 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
     `use libra-4.8.1`
 
+    `conda activate libra-4.8.1`
+
   Cluster:
 
     `module load vidia/quantum-chemistry-py37-Fall2019`
@@ -183,7 +185,7 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
     `use nano-qmflows`
 
-    `source activate qmflows`
+    `conda activate qmflows`
 
   Cluster:
 
@@ -199,6 +201,7 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
   VIDIA:
 
+    `conda activate pyquante2` - uses python 3.6 and numpy 1.18.5
 
   Cluster:
 
