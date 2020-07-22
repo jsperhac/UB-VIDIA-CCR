@@ -286,7 +286,7 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
   VIDIA:
 
-    `use ergoscf-3.8`
+    `use ergoscf-3.8` - default version
 
   Cluster:
 
@@ -447,6 +447,7 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
   The `namd` code is presently installed.
 
   [Hefei-NAMD Documentation](http://staff.ustc.edu.cn/~zhaojin/code.html)
+
   [Hefei-NAMD Presentation](http://home.ustc.edu.cn/~zqj/code/namd.pdf)
 
   </details>
