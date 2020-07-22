@@ -224,7 +224,7 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
   Notes: doesn't include PySHARC
 
-  [SHARC Documentation] (https://sharc-md.org)
+  [SHARC Documentation](https://sharc-md.org)
 
   </details>
 
@@ -252,7 +252,7 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
   Notes:   
 
-  [DFTB+ Documentation] (https://dftbplus.org)
+  [DFTB+ Documentation](https://dftbplus.org)
 
   </details>
 
@@ -296,6 +296,8 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
   Notes: 
 
+  Installed with openMP support.
+
   [ErgoSCF Manual](http://www.ergoscf.org/index.php)
 
   </details>
@@ -330,6 +332,8 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
   Notes: 
 
+  Installed with openMP support.
+
   [QuantumEspresso Manual](https://www.quantum-espresso.org)
 
   </details>
@@ -350,13 +354,15 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
     `module load eqe/0.2.0`
 
   Notes: 
+
+  [eQE Manual](http://eqe.rutgers.edu/manual.html)
+
+  Installed with openMP support.
   
   Features installed on VIDIA:
   - basic code for scf, structure optimization, MD (pw)
   - postprocessing programs (pp)
   - CP code: CP MD with ultrasoft pseudopotentials (cp)
-
-  [eQE Manual](http://eqe.rutgers.edu/manual.html)
 
   </details>
 
@@ -412,7 +418,7 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
   Notes: 
 
-  [Newton-X Documentation] (http://www.newtonx.org)
+  [Newton-X Documentation](http://www.newtonx.org)
 
   </details>
 
@@ -453,7 +459,7 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
   Notes: 
 
-  [Auto-FOX Documentation] (https://auto-fox.readthedocs.io/en/latest/)
+  [Auto-FOX Documentation](https://auto-fox.readthedocs.io/en/latest/)
 
   </details>
 
@@ -475,6 +481,6 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
   Notes: 
 
-  [CAT Documentation] (https://cat.readthedocs.io/en/latest/)
+  [CAT Documentation](https://cat.readthedocs.io/en/latest/)
 
   </details>
