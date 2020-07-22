@@ -7,7 +7,7 @@
 
 ## Access to the command line
 
-There are three ways to access your own VIDIA container on the command line:
+There are three ways to access the command line of your own VIDIA container:
 
 - Run the Workspace tool
 
@@ -34,11 +34,13 @@ Then issue the command:
 
 ### What does `use` do?
 
-To see what really goes on when you invoke use, you can look at the settings created when you run
+To see what really goes on when you invoke the use command, look at the settings created when you run
 it. You can list and cat them in the directory: `/apps/share64/debian8/environ.d/`
 
 So when you `cat` the ergoscf-3.8 use script you see that it sets the environment variable `$ERGO`
 enabling you to easily call the executables of ergoSCF.
+
+Run "man use" from the command line to see the man pages for this command.
 
 ## conda envs
 
@@ -88,7 +90,7 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 |  HORTON                        | No   |  2.1.1    |
 |  COLUMBUS                      | No   | 7.0_2017-12-07 |
 |  Newton-X                      | 2.2-B08 (testing in progress)  |  No |
-|  Hefei-NAMD                    | No   |  Yes (version?) |
+|  Hefei-NAMD                    | Yes (July 2020) |  Yes (October 2019) |
 |  Auto-FOX                    | 0.7.4/qmflows   |  Yes (version?) |
 |  CAT                    | 0.9.6/qmflows   |  Yes (version?) |
 
@@ -428,7 +430,9 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
   VIDIA:
 
-    N/A
+    Any of the lines 
+
+    `use hefei-namd`
 
   Cluster:
 
@@ -437,6 +441,13 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
     `module load hefei-namd`
 
   Notes: 
+
+  No versions of this code are tagged, so entries in the table above is labeled with date downloaded/compiled.
+
+  The `namd` code is presently installed.
+
+  [Hefei-NAMD Documentation](http://staff.ustc.edu.cn/~zhaojin/code.html)
+  [Hefei-NAMD Presentation](http://home.ustc.edu.cn/~zqj/code/namd.pdf)
 
   </details>
 
