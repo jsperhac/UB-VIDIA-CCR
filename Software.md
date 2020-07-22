@@ -82,7 +82,7 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 |  CP2K                          |        7.1        |  7.1, 6.1     |
 |  ErgoSCF                       |        3.8                    |  3.8, 3.8-modified    |
 |  QuantumEspresso               | 6.5 |  6.5, 6.4.1, 6.2.1, 6.2.1-epw, 6.1, 5.2.1, 5.2.1-static, 5.0.2    |
-|  eQE                           | No   |  0.2.0    |
+|  eQE                           | 0.2.0   |  0.2.0    |
 |  HORTON                        | No   |  2.1.1    |
 |  COLUMBUS                      | No   | 7.0_2017-12-07 |
 |  Newton-X                      | 2.2-B08 (testing in progress)  |  No |
@@ -334,7 +334,8 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
   VIDIA:
 
-    N/A
+    `use eqe-0.2.0`
+
 
   Cluster:
 
@@ -343,6 +344,11 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
     `module load eqe/0.2.0`
 
   Notes: 
+
+  - basic code for scf, structure optimization, MD (pw)
+  - postprocessing programs (pp)
+  - CP code: CP MD with ultrasoft pseudopotentials (cp)
+
 
   </details>
 
