@@ -7,7 +7,7 @@
 
 ## Access to the command line
 
-There are three ways to access your own VIDIA container on the command line:
+There are three ways to access the command line of your own VIDIA container:
 
 - Run the Workspace tool
 
@@ -20,33 +20,35 @@ For the Jupyter Notebooks options, access is provided in the "New" drop-down con
 ## `use` in the Workspace
 
 To find out what's available on UB VIDIA via the "%use" magic, start a VIDIA Workspace, then type
-"use" on the command line. You'll see a list of the options. "Use"-ing one sets paths and the needed
-environment variables to run a given piece of software. Most are specified with the version, such
-as `ergoscf-3.8`.
+"use" on the command line. You'll see a list of the options. Issuing a use command sets paths and the needed
+environment variables so you can run a given piece of software. Most are specified with the
+installed version, such as: `ergoscf-3.8`.
 
 Tip: if you see an error when you enter "use", try this first:
 
 `source /etc/environ.sh`
 
+Then issue the command:
+
 `use`
 
 ### What does `use` do?
 
-To see what really goes on when you invoke use, you can look at the settings created when you run
+To see what really goes on when you invoke the use command, look at the settings created when you run
 it. You can list and cat them in the directory: `/apps/share64/debian8/environ.d/`
 
 So when you `cat` the ergoscf-3.8 use script you see that it sets the environment variable `$ERGO`
-enabling you to call the executables of ergoSCF.
+enabling you to easily call the executables of ergoSCF.
+
+Run "man use" from the command line to see the man pages for this command.
 
 ## conda envs
 
-Some packages are installed as conda envs under anaconda-6. To see a list of available conda envs, issue these commands on the Workspace command line:
-
-`use anaconda-6`
+Some packages are installed as conda envs. To see a list of available conda envs, issue these commands on the Workspace command line:
 
 `conda activate`
 
-`conda info --env`
+`conda info --envs`
 
 ## In Python
 
@@ -60,7 +62,7 @@ To use an environment from Python,
 
 1. then call the "%use" magic to set your paths and your environment:
 
-    `%use anaconda-6`
+    `%use libra-4.8.1`
 
 
 # 2. Software availability & status
@@ -76,7 +78,7 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 |  pyglet                       |  1.5.7/pyscf              |                    |
 |  Nano-QMflows                  |           0.10.1/qmflows         |         Yes                  |
 |  QMflows                  |           0.10.1/qmflows         |         Yes                  |
-|  PyQuante2                     |                |  Yes (version?)                  |
+|  PyQuante2                     | 2.0               |  Yes (version?)                  |
 |  SHARC                         |           2.1.1/pysharc (testing in progress)                |         No                   |
 |  DFTB+                         |   19.1         |  19.1-arpack, 19.1-dftd3, 19.1     |
 |  CP2K                          |        7.1        |  7.1, 6.1     |
@@ -86,7 +88,7 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 |  HORTON                        | No   |  2.1.1    |
 |  COLUMBUS                      | No   | 7.0_2017-12-07 |
 |  Newton-X                      | 2.2-B08 (testing in progress)  |  No |
-|  Hefei-NAMD                    | No   |  Yes (version?) |
+|  Hefei-NAMD                    | Yes (July 2020) |  Yes (October 2019) |
 |  Auto-FOX                    | 0.7.4/qmflows   |  Yes (version?) |
 |  CAT                    | 0.9.6/qmflows   |  Yes (version?) |
 
@@ -107,6 +109,8 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
   VIDIA:
 
     `use libra-4.8.1`
+
+    `conda activate libra-4.8.1`
 
   Cluster:
 
@@ -139,7 +143,9 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
     Any of the lines
 
-    `use pyscf`
+    `use pyscf-pyglet`
+
+    `conda activate pyscf`
 
   Cluster:
 
@@ -159,6 +165,8 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
     `use libra-4.8.1`
 
+    `conda activate libra-4.8.1`
+
   Cluster:
 
     `module load vidia/quantum-chemistry-py37-Fall2019`
@@ -173,11 +181,11 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
   VIDIA:
 
-    All of the lines
+    Any of the lines
 
-    `use anaconda-6`
+    `use nano-qmflows`
 
-    `source activate qmflows`
+    `conda activate qmflows`
 
   Cluster:
 
@@ -193,6 +201,7 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
   VIDIA:
 
+    `conda activate pyquante2` - uses python 3.6 and numpy 1.18.5
 
   Cluster:
 
@@ -220,6 +229,8 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
   Notes: doesn't include PySHARC
 
+  [SHARC Documentation](https://sharc-md.org)
+
   </details>
 
 * <details>
@@ -230,11 +241,9 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
     Any of the lines
 
-    `use dftbplus-19.1`
+    `use dftbplus-19.1` - with dftd3 and arpack
 
-    `use dftbplus-pre-18.2`
-
-    `use dftbplus-pre-17.1`
+    `use dftbplus-pre-19.1` - precompiled
 
   Cluster:  
 
@@ -248,7 +257,7 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
   Notes:   
 
-    `use dftbplus-18.2` - this one is available, but doesn't work due to library conflicts
+  [DFTB+ Documentation](https://dftbplus.org)
 
   </details>
 
@@ -258,11 +267,7 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
   VIDIA:
 
-    All of the lines
-
-    `use anaconda-6`
-
-    `source activate cp2k-test` - this is a testing version
+    `use cp2k-7.1.0`
 
   Cluster:
 
@@ -274,6 +279,8 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
   Notes: 
 
+  [CP2K Open Source Molecular Dynamics](http://www.cp2k.org)
+
   </details>
 
 * <details>
@@ -282,7 +289,7 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
   VIDIA:
 
-    N/A
+    `use ergoscf-3.8` - default version
 
   Cluster:
 
@@ -294,6 +301,10 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
   Notes: 
 
+  Installed with openMP support.
+
+  [ErgoSCF Manual](http://www.ergoscf.org/index.php)
+
   </details>
 
 * <details>
@@ -302,7 +313,7 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
   VIDIA:
 
-    N/A
+    `use qe-6.5`
 
   Cluster:
 
@@ -326,6 +337,10 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
   Notes: 
 
+  Installed with openMP support.
+
+  [QuantumEspresso Manual](https://www.quantum-espresso.org)
+
   </details>
 
 * <details>
@@ -345,10 +360,14 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
   Notes: 
 
+  [eQE Manual](http://eqe.rutgers.edu/manual.html)
+
+  Installed with openMP support.
+  
+  Features installed on VIDIA:
   - basic code for scf, structure optimization, MD (pw)
   - postprocessing programs (pp)
   - CP code: CP MD with ultrasoft pseudopotentials (cp)
-
 
   </details>
 
@@ -404,6 +423,8 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
   Notes: 
 
+  [Newton-X Documentation](http://www.newtonx.org)
+
   </details>
 
 * <details>
@@ -412,7 +433,9 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
   VIDIA:
 
-    N/A
+    Any of the lines 
+
+    `use hefei-namd`
 
   Cluster:
 
@@ -422,6 +445,57 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
   Notes: 
 
+  No versions of this code are tagged, so entries in the table above is labeled with date downloaded/compiled.
+
+  The `namd` code is presently installed.
+
+  [Hefei-NAMD Documentation](http://staff.ustc.edu.cn/~zhaojin/code.html)
+
+  [Hefei-NAMD Presentation](http://home.ustc.edu.cn/~zqj/code/namd.pdf)
+
   </details>
 
 
+* <details>
+  <summary>Auto-FOX</summary>  
+  Description: 
+
+  VIDIA:
+
+    Any of the lines
+
+    `conda activate nano-qmflows`
+
+    `use qmflows`
+
+  Cluster:
+
+    N/A
+
+  Notes: 
+
+  [Auto-FOX Documentation](https://auto-fox.readthedocs.io/en/latest/)
+
+  </details>
+
+* <details>
+  <summary>CAT</summary>  
+  Description: 
+
+  VIDIA:
+
+    Any of the lines
+
+    `conda activate nano-qmflows`
+
+    `use qmflows`
+
+  Cluster:
+
+    N/A
+
+  Notes: 
+
+  [CAT Documentation](https://cat.readthedocs.io/en/latest/)
+
+  </details>
