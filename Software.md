@@ -20,13 +20,15 @@ For the Jupyter Notebooks options, access is provided in the "New" drop-down con
 ## `use` in the Workspace
 
 To find out what's available on UB VIDIA via the "%use" magic, start a VIDIA Workspace, then type
-"use" on the command line. You'll see a list of the options. "Use"-ing one sets paths and the needed
-environment variables to run a given piece of software. Most are specified with the version, such
-as `ergoscf-3.8`.
+"use" on the command line. You'll see a list of the options. Issuing a use command sets paths and the needed
+environment variables so you can run a given piece of software. Most are specified with the
+installed version, such as: `ergoscf-3.8`.
 
 Tip: if you see an error when you enter "use", try this first:
 
 `source /etc/environ.sh`
+
+Then issue the command:
 
 `use`
 
@@ -36,7 +38,7 @@ To see what really goes on when you invoke use, you can look at the settings cre
 it. You can list and cat them in the directory: `/apps/share64/debian8/environ.d/`
 
 So when you `cat` the ergoscf-3.8 use script you see that it sets the environment variable `$ERGO`
-enabling you to call the executables of ergoSCF.
+enabling you to easily call the executables of ergoSCF.
 
 ## conda envs
 
@@ -139,7 +141,9 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
     Any of the lines
 
-    `use pyscf`
+    `use pyscf-pyglet`
+
+    `conda activate pyscf`
 
   Cluster:
 
@@ -173,9 +177,9 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
   VIDIA:
 
-    All of the lines
+    Any of the lines
 
-    `use anaconda-6`
+    `use nano-qmflows`
 
     `source activate qmflows`
 
@@ -220,6 +224,8 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
   Notes: doesn't include PySHARC
 
+  [SHARC Documentation] (https://sharc-md.org)
+
   </details>
 
 * <details>
@@ -230,11 +236,9 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
     Any of the lines
 
-    `use dftbplus-19.1`
+    `use dftbplus-19.1` - with dftd3 and arpack
 
-    `use dftbplus-pre-18.2`
-
-    `use dftbplus-pre-17.1`
+    `use dftbplus-pre-19.1` - precompiled
 
   Cluster:  
 
@@ -248,7 +252,7 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
   Notes:   
 
-    `use dftbplus-18.2` - this one is available, but doesn't work due to library conflicts
+  [DFTB+ Documentation] (https://dftbplus.org)
 
   </details>
 
@@ -258,11 +262,7 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
   VIDIA:
 
-    All of the lines
-
-    `use anaconda-6`
-
-    `source activate cp2k-test` - this is a testing version
+    `use cp2k-7.1.0`
 
   Cluster:
 
@@ -274,6 +274,8 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
   Notes: 
 
+  [CP2K Open Source Molecular Dynamics](http://www.cp2k.org)
+
   </details>
 
 * <details>
@@ -282,7 +284,7 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
   VIDIA:
 
-    N/A
+    `use ergoscf-3.8`
 
   Cluster:
 
@@ -294,6 +296,8 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
   Notes: 
 
+  [ErgoSCF Manual](http://www.ergoscf.org/index.php)
+
   </details>
 
 * <details>
@@ -302,7 +306,7 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
   VIDIA:
 
-    N/A
+    `use qe-6.5`
 
   Cluster:
 
@@ -326,6 +330,8 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
   Notes: 
 
+  [QuantumEspresso Manual](https://www.quantum-espresso.org)
+
   </details>
 
 * <details>
@@ -344,11 +350,13 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
     `module load eqe/0.2.0`
 
   Notes: 
-
+  
+  Features installed on VIDIA:
   - basic code for scf, structure optimization, MD (pw)
   - postprocessing programs (pp)
   - CP code: CP MD with ultrasoft pseudopotentials (cp)
 
+  [eQE Manual](http://eqe.rutgers.edu/manual.html)
 
   </details>
 
@@ -404,6 +412,8 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 
   Notes: 
 
+  [Newton-X Documentation] (http://www.newtonx.org)
+
   </details>
 
 * <details>
@@ -425,3 +435,46 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
   </details>
 
 
+* <details>
+  <summary>Auto-FOX</summary>  
+  Description: 
+
+  VIDIA:
+
+    Any of the lines
+
+    `conda activate nano-qmflows`
+
+    `use qmflows`
+
+  Cluster:
+
+    N/A
+
+  Notes: 
+
+  [Auto-FOX Documentation] (https://auto-fox.readthedocs.io/en/latest/)
+
+  </details>
+
+* <details>
+  <summary>CAT</summary>  
+  Description: 
+
+  VIDIA:
+
+    Any of the lines
+
+    `conda activate nano-qmflows`
+
+    `use qmflows`
+
+  Cluster:
+
+    N/A
+
+  Notes: 
+
+  [CAT Documentation] (https://cat.readthedocs.io/en/latest/)
+
+  </details>
