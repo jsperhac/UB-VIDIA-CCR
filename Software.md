@@ -72,13 +72,13 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 |   Software                     |         VIDIA (version/env)               |         Cluster              |
 | ----------                     | ---------------------------- | ---------------------------- |
 |  Libra                         | 4.8.1/libra-4.8.1                 |  4.8.1, 4.4.0                  |
-|  Psi4                          |                |  Yes (version?)                  |
-|  PySCF                         |  1.7.3/pyscf              |  Yes (version?)                  |
-|  py3Dmol                       |  0.8.0/libra-4.8.1              |  Yes (version?)                  |
-|  pyglet                       |  1.5.7/pyscf              |                    |
-|  Nano-QMflows                  |           0.10.1/qmflows         |         Yes                  |
-|  QMflows                  |           0.10.1/qmflows         |         Yes                  |
-|  PyQuante2                     | 2.0               |  Yes (version?)                  |
+|  Psi4                          |                |  Yes (1.3.2)\*                  |
+|  PySCF                         |  1.7.3/pyscf              |  Yes (1.6.4)\*                  |
+|  py3Dmol                       |  0.8.0/libra-4.8.1              |  Yes (0.8.0)\*                  |
+|  pyglet                       |  1.5.7/pyscf              |   Yes (1.4.5)\*                 |
+|  Nano-QMflows                  |           0.10.1/qmflows         |         Yes (0.8.1, in qmflows env)\*                 |
+|  QMflows                  |           0.10.1/qmflows         |         Yes (0.8.0, in qmflows env)\*                 |
+|  PyQuante2                     | 2.0               |  Yes (2.0)\*                  |
 |  SHARC                         |           2.1.1/pysharc (testing in progress)                |         No                   |
 |  DFTB+                         |   19.1         |  19.1-arpack, 19.1-dftd3, 19.1     |
 |  CP2K                          |        7.1        |  7.1, 6.1     |
@@ -92,6 +92,7 @@ We are now reinstalling all VIDIA packages under the new debian 8 container envi
 |  Auto-FOX                    | 0.7.4/qmflows   |  Yes (version?) |
 |  CAT                    | 0.9.6/qmflows   |  Yes (version?) |
 
+\*Note that py3dmol; psi4; pyglet; pyquante2; pyscf; qmflows; qmflows-namd are available as conda envs in vidia/quantum-chemistry-py37-Fall2019 module.
 
 # 3. To be added:
 
